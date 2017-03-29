@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Register Repo
+  p To make use of GrabGit, a repository must be registered before the endpoints can be used.
+  form(action='/api/repos/register', method='post')
+    p Current available repositories:
+    p #{dir}
+    br
+    br
+    label(for='repoUrl') Github Repository Url:
+    br
+    input(id='repoUrl', name='repoUrl' type='text', value='', placeholder='https://github.com/repoOwner/repoName')
