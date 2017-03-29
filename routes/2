@@ -1,0 +1,36 @@
+var express = require('express');
+var router = express.Router();
+var sys = require('util')
+var exec = require('child_process').exec;
+var git = require('simple-git')();
+
+function log(error, stdout, stderr) { 
+	console.log(stdout);
+}
+
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+	res.send('API base route. Nothing here.');
+});
+
+router.get('/clone', function(req, res, next) {
+	var repoUrl = req.query.repoUrl;
+	var repoUrlParams = repoUrl.split('/');
+	var repoOwner = repoUrlParams[repoUrlParams.length-2];
+	var repoName = repoUrlParams[repoUrlParams.length-1];
+
+	console.log(repoOwner);
+	console.log(repoName);
+
+	git.clone('https://github.com/kfwong/mcs.git', 'git/'+repoOwner+'/'+repoName, [], function(err, data){
+		if(!err){
+			res.send('repo cloned.');
+		}else{
+			if(err.indexOf('already exists') != -1){
+				res.send('repo already cloned, skipped.');
+			}
+		}
+	});
+});
+
+module.exports = router;
