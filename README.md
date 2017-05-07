@@ -1,6 +1,17 @@
 # GrabGit-Server
 GrabGit is a git repository inspector service developed by a group of students from National University of Singapore under the module CS3219 Software Engineering Principles and Patterns. This server is an RESTful endpoint service for the main application.
 
+![architecture-diagram](https://github.com/kfwong/GrabGit-Server/raw/master/arch-diagram.png)
+
+## Companion Services
+Controller Server: This repository.
+
+Web App URL (Github Pages): [https://turtle96.github.io/GrabGit/](https://turtle96.github.io/GrabGit/)
+
+GrabGit Repository (Frontend): [https://github.com/turtle96/GrabGit](https://github.com/turtle96/GrabGit)
+
+Telegram Chatbot Repository: [https://github.com/turtle96/grabGit-chatbot](https://github.com/turtle96/grabGit-chatbot)
+
 ## Installation
 
 ### Prerequisite
