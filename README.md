@@ -29,7 +29,7 @@ Telegram Chatbot Repository: [https://github.com/turtle96/grabGit-chatbot](https
 Our team make use of the `forever` npm module to run multiple node at the same time in the background.
 Check out [https://www.npmjs.com/package/forever](https://www.npmjs.com/package/forever) for its usage.
 
-### Available Endpoints
+## Available Endpoints
 All endpoints are written in routes/api.js.
 
 **Important (1):** Normally, all major browser should deny all cross-site origin request, since our frontend views and server controller is separated from each other. This server script added a HTTP header `'Access-Control-Allow-Origin *` to all endpoints response.
